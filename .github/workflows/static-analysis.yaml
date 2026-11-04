@@ -4,6 +4,13 @@ on:
     pull_request:
     push:
         branches: [ master ]
+        paths-ignore:
+            - "**.md"
+            - "LICENSE"
+            - ".gitignore"
+            - ".vscode/**"
+            - ".idea/**"
+            - "know-how/**"
 
 jobs:
     php-cs-fixer:
