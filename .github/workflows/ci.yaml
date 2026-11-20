@@ -35,9 +35,9 @@ jobs:
         name: PHP ${{ matrix.php }} ${{ matrix.description }}
         steps:
             - name: Checkout
-              uses: actions/checkout@v2
+              uses: actions/checkout@v7
 
-            - uses: actions/cache@v2
+            - uses: actions/cache@v6
               with:
                   path: ~/.composer/cache/files
                   key: ${{ matrix.php }}
@@ -65,8 +65,8 @@ jobs:
               if: matrix.coverage == 'xdebug'
 
             - name: Run codecov
-              uses: codecov/codecov-action@v1
+              uses: codecov/codecov-action@v7
               if: matrix.coverage == 'xdebug'
               with:
-                  file: './coverage.xml'
+                  files: './coverage.xml'
                   fail_ci_if_error: true
